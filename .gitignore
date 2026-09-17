@@ -3,3 +3,5 @@ dist
 .tanstack
 *.local
 .DS_Store
+
+.vercel

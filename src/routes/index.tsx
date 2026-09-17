@@ -2,7 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { Instagram, Linkedin, Mail, MapPin, Send } from "lucide-react";
 import { useState, type FormEvent } from "react";
 import { Button } from "@/components/ui/button";
-import treeBackground from "@/assets/dark-tree-background.jpg";
+import background from "@/assets/background.png";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -36,8 +36,8 @@ function Index() {
   return (
     <main className="relative isolate flex min-h-screen items-center overflow-hidden bg-background px-5 py-14 sm:px-8 lg:px-12">
       <img
-        src={treeBackground}
-        alt="A stark leafless tree against a distressed red and black backdrop"
+        src={background}
+        alt="Distressed dark texture backdrop with red border styling"
         width={1536}
         height={864}
         className="absolute inset-0 -z-20 size-full object-cover"
