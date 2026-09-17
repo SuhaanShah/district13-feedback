@@ -60,7 +60,7 @@ function Index() {
             <p className="mx-auto mt-4 max-w-xs font-display text-sm font-semibold uppercase leading-relaxed text-foreground">
               Khush Thakkar
               <br />
-              <span className="text-primary">(B4DS Chairperson)</span>
+              <span className="text-primary">(S4DS Chairperson)</span>
               <br />
               <a className="contact-link" href="tel:+918958107107">+91 89581 07107</a>
               <br />
