@@ -32,10 +32,12 @@
   --color-ring-offset-background: var(--background);
   --color-overlay: var(--overlay);
   --color-panel: var(--panel);
-  --color-map: var(--map);
-  --color-map-foreground: var(--map-foreground);
+  --color-gold: #dfb75c;
+  --color-gold-dark: #a98e4c;
+  --color-gold-light: #f2e7ba;
   --font-display: "Orbitron", sans-serif;
   --font-body: "Rajdhani", sans-serif;
+  --font-serif: "Cinzel", Georgia, serif;
 }
 :root {
   --radius: 0.125rem;
