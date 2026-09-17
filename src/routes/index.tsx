@@ -4,6 +4,7 @@ import { useState, type FormEvent } from "react";
 import { Button } from "@/components/ui/button";
 import background from "@/assets/background.png";
 import addressGold from "@/assets/address_gold.png";
+import xtractBanner from "@/assets/xtract-side-banner.png";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -44,6 +45,13 @@ function Index() {
         className="absolute inset-0 -z-20 size-full object-cover"
       />
       <div className="absolute inset-0 -z-10 bg-overlay" />
+
+      {/* Right side XTRACT 5.0 watermark banner */}
+      <img
+        src={xtractBanner}
+        alt="The XTRACT 5.0"
+        className="pointer-events-none absolute right-0 top-0 bottom-0 -z-10 hidden h-full w-auto object-contain opacity-75 xl:block"
+      />
 
       <div className="mx-auto grid w-full max-w-7xl grid-cols-1 gap-14 lg:grid-cols-[0.8fr_1.15fr_0.9fr] lg:items-center lg:gap-10">
         <aside className="space-y-9 text-center lg:self-stretch lg:py-4 lg:text-left">
