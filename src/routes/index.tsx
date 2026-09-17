@@ -3,6 +3,7 @@ import { Instagram, Linkedin, Mail, MapPin, Send } from "lucide-react";
 import { useState, type FormEvent } from "react";
 import { Button } from "@/components/ui/button";
 import background from "@/assets/background.png";
+import addressGold from "@/assets/address_gold.png";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -106,18 +107,18 @@ function Index() {
 
         <aside className="text-center lg:self-start lg:pt-4 lg:text-left">
           <section aria-labelledby="address-heading">
-            <h2 id="address-heading" className="section-heading">Address</h2>
+            <h2 id="address-heading" className="sr-only">Address</h2>
             <a
-              className="contact-link mx-auto mt-4 block max-w-sm font-body text-sm leading-relaxed text-foreground"
               href="https://maps.google.com/?q=Dwarkadas+J.+Sanghvi+College+of+Engineering,+Vile+Parle+West,+Mumbai+400056"
               target="_blank"
               rel="noopener noreferrer"
+              className="mx-auto block max-w-xs transition-opacity hover:opacity-90"
             >
-              No. U-15, J.V.P.D. Scheme,
-              <br />Bhaktivedanta Swami Marg,
-              <br />Opp. Cooper Hospital,
-              <br />Vile Parle (West),
-              <br />Mumbai – 400 056.
+              <img
+                src={addressGold}
+                alt="Address: No. U-15, J.V.P.D. Scheme, Bhaktivedanta Swami Marg, Opp. Cooper Hospital, Vile Parle (West), Mumbai - 400 056, India"
+                className="mx-auto w-full object-contain drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)]"
+              />
             </a>
 
             <a
