@@ -80,7 +80,7 @@ function Index() {
 
         <section className="mx-auto w-full max-w-md text-center" aria-labelledby="feedback-heading">
           <h1 id="feedback-heading" className="section-heading text-3xl sm:text-4xl">Feedback</h1>
-          <p className="mt-1 font-body text-sm italic text-muted-foreground">Leave your mark. A tribute.</p>
+          <p className="mt-1 font-body text-sm italic text-muted-foreground">Leave your mark, Tribute.</p>
 
           <form onSubmit={submitFeedback} className="mt-6 border-2 border-primary bg-panel p-5 sm:p-7">
             <div className="space-y-4">
