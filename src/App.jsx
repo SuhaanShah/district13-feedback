@@ -14,7 +14,7 @@ import iconInstagram from './assets/icon_instagram.png';
 import iconLinkedin from './assets/icon_linkedin.png';
 import iconEmail from './assets/icon_email.png';
 import feedbackTitle from './assets/feedback_title.png';
-import leaveYourMarkComplete from './assets/leave_your_mark_complete.png';
+import goldDividerLine from './assets/gold_divider_line.png';
 import cleanCardTransparent from './assets/clean_card_transparent.png';
 import addressTitle from './assets/address_title.png';
 import addressText from './assets/address_text.png';
@@ -58,9 +58,14 @@ function App() {
           <img src={feedbackTitle} alt="FEEDBACK" />
         </div>
 
-        {/* Tribute Subtitle & Line */}
-        <div className="stage-elem tribute-subtitle">
-          <img src={leaveYourMarkComplete} alt="LEAVE YOUR MARK TRIBUTE" />
+        {/* Tribute Subtitle with original gold divider line component */}
+        <div className="stage-elem tribute-block">
+          <div className="tribute-text-heading">LEAVE YOUR MARK TRIBUTE</div>
+          <img
+            src={goldDividerLine}
+            className="tribute-gold-line"
+            alt="Divider Line"
+          />
         </div>
 
         {/* Feedback Card Box with Exact Figma Graphics */}

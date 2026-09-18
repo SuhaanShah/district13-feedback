@@ -56,20 +56,40 @@
   height: 47px;
 }
 
-/* 2. Tribute Subtitle & Gold Line */
-.tribute-subtitle {
-  left: 690px;
-  top: 305px;
-  width: 420px;
-  height: 45px;
+/* 2. Tribute Subtitle & Gold Line Component */
+.tribute-block {
+  left: 659px;
+  top: 308px;
+  width: 478px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   z-index: 5;
-  filter: drop-shadow(0 0 6px rgba(223, 186, 109, 0.45));
 }
 
-.tribute-subtitle img {
-  width: 420px;
-  height: 45px;
-  object-fit: contain;
+.tribute-text-heading {
+  color: #dfba6d;
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+  text-align: center;
+  text-shadow: 0 0 10px rgba(223, 186, 109, 0.5);
+  white-space: nowrap;
+  user-select: none;
+}
+
+.tribute-gold-line {
+  width: 322px;
+  height: 2px;
+  display: block;
+  object-fit: fill;
+  filter: drop-shadow(0 0 3px rgba(223, 186, 109, 0.8)) brightness(1.25);
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
 }
 
 /* 3. Feedback Card Box */
