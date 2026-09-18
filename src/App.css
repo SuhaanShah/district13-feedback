@@ -1,0 +1,394 @@
+﻿/* Fullscreen fixed wrapper covering 100vw x 100vh */
+.canvas-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background-color: #0b0506;
+}
+
+/* 1920x1080 Stage scaled uniformly to prevent any blur or aspect ratio distortion */
+.canvas-stage {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 1920px;
+  height: 1080px;
+  transform: translate(-50%, -50%) scale(var(--stage-scale, 1));
+  transform-origin: center center;
+  pointer-events: auto;
+}
+
+/* Stage element positioning */
+.stage-elem {
+  position: absolute;
+}
+
+.stage-elem img {
+  display: block;
+  object-fit: contain;
+  pointer-events: none;
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+}
+
+/* 1. FEEDBACK Header */
+.feedback-header {
+  left: 659px;
+  top: 231px;
+  width: 478px;
+  height: 47px;
+  z-index: 5;
+}
+
+.feedback-header img {
+  width: 478px;
+  height: 47px;
+}
+
+/* 2. Tribute Subtitle */
+.tribute-subtitle {
+  left: 690px;
+  top: 315px;
+  width: 420px;
+  height: 30px;
+  z-index: 5;
+}
+
+.tribute-subtitle img {
+  width: 420px;
+  height: 30px;
+}
+
+/* 3. Feedback Card Box */
+.feedback-card {
+  left: 683px;
+  top: 385px;
+  width: 445px;
+  height: 360px;
+  z-index: 10;
+}
+
+.card-base-img {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 445px;
+  height: 360px;
+  object-fit: fill;
+  pointer-events: none;
+}
+
+.card-interactive-overlay {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 445px;
+  height: 360px;
+  z-index: 15;
+}
+
+/* Inputs overlaying the base image */
+.feedback-input {
+  position: absolute;
+  left: 114px;
+  width: 275px;
+  height: 44px;
+  background: transparent;
+  color: transparent;
+  border: none;
+  outline: none;
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  caret-color: #dfba6d;
+  padding: 0 8px;
+  transition: background 0.15s ease, color 0.15s ease;
+  z-index: 20;
+}
+
+.name-input-field {
+  top: 68px;
+}
+
+.phone-input-field {
+  top: 152px;
+}
+
+.feedback-input:focus,
+.feedback-input.has-value {
+  background: rgba(22, 14, 14, 0.95);
+  color: #dfba6d;
+  border-radius: 4px;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.7);
+}
+
+/* Button overlaying the base image */
+.feedback-submit-btn {
+  position: absolute;
+  left: 92px;
+  top: 243px;
+  width: 282px;
+  height: 54px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  border-radius: 27px;
+  transition: box-shadow 0.2s ease, transform 0.15s ease;
+  z-index: 20;
+}
+
+.feedback-submit-btn:hover {
+  box-shadow: 0 0 16px rgba(223, 186, 109, 0.75);
+}
+
+.feedback-submit-btn:active {
+  transform: scale(0.98);
+}
+
+/* Submission Toast */
+.card-toast {
+  position: absolute;
+  bottom: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(20, 10, 10, 0.96);
+  border: 1px solid #dfba6d;
+  padding: 8px 18px;
+  border-radius: 4px;
+  color: #dfba6d;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  box-shadow: 0 0 15px rgba(223, 186, 109, 0.6);
+  z-index: 30;
+  animation: toastFade 0.25s ease;
+  white-space: nowrap;
+}
+
+@keyframes toastFade {
+  from { opacity: 0; transform: translate(-50%, 6px); }
+  to { opacity: 1; transform: translate(-50%, 0); }
+}
+
+/* 4. INFO Column */
+.info-title {
+  left: 282px;
+  top: 214px;
+  width: 170px;
+  height: 40px;
+  z-index: 5;
+}
+
+.info-title img {
+  width: 170px;
+  height: 40px;
+}
+
+.nav-links-container {
+  left: 266px;
+  top: 300px;
+  width: 203px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  z-index: 5;
+}
+
+.nav-link {
+  display: block;
+  cursor: pointer;
+  transition: transform 0.2s ease, filter 0.2s ease;
+}
+
+.home-link img {
+  width: 179px;
+  height: 40px;
+}
+
+.team-link img {
+  width: 203px;
+  height: 39px;
+}
+
+.events-link img {
+  width: 148px;
+  height: 24px;
+}
+
+.nav-link:hover {
+  transform: scale(1.06);
+  filter: drop-shadow(0 0 10px rgba(223, 186, 109, 0.9)) brightness(1.25);
+}
+
+/* 5. CONTACT US Column */
+.contact-us-title {
+  left: 139px;
+  top: 534px;
+  width: 410px;
+  height: 34px;
+  z-index: 5;
+}
+
+.contact-us-title img {
+  width: 410px;
+  height: 34px;
+}
+
+.contact-person-block {
+  left: 104px;
+  top: 631px;
+  width: 529px;
+  height: 111px;
+  z-index: 5;
+}
+
+.contact-person-block img {
+  width: 529px;
+  height: 111px;
+}
+
+.phone-click-area {
+  position: absolute;
+  left: 80px;
+  bottom: 0;
+  width: 370px;
+  height: 42px;
+  cursor: pointer;
+  z-index: 10;
+  transition: background 0.2s ease;
+}
+
+.phone-click-area:hover {
+  background: rgba(223, 186, 109, 0.15);
+  border-radius: 4px;
+}
+
+/* 6. SOCIAL MEDIA Column */
+.social-media-title {
+  left: 96px;
+  top: 833px;
+  width: 400px;
+  height: 50px;
+  z-index: 5;
+}
+
+.social-media-title img {
+  width: 400px;
+  height: 50px;
+}
+
+.social-icons-container {
+  left: 117px;
+  top: 900px;
+  width: 344px;
+  height: 90px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 5;
+}
+
+.social-btn {
+  display: block;
+  cursor: pointer;
+  transition: transform 0.2s ease, filter 0.2s ease;
+}
+
+.social-btn img {
+  width: 88px;
+  height: 88px;
+}
+
+.social-btn:hover {
+  transform: scale(1.12);
+  filter: drop-shadow(0 0 12px rgba(255, 255, 255, 0.9)) brightness(1.3);
+}
+
+/* 7. ADDRESS Column */
+.address-title {
+  left: 1333px;
+  top: 210px;
+  width: 349px;
+  height: 37px;
+  z-index: 5;
+}
+
+.address-title img {
+  width: 349px;
+  height: 37px;
+}
+
+.address-block {
+  left: 1326px;
+  top: 278px;
+  width: 411px;
+  height: 157px;
+  z-index: 5;
+}
+
+.address-click-link {
+  display: block;
+  width: 411px;
+  height: 157px;
+  cursor: pointer;
+  transition: transform 0.2s ease, filter 0.2s ease;
+}
+
+.address-click-link img {
+  width: 411px;
+  height: 157px;
+}
+
+.address-click-link:hover {
+  transform: scale(1.02);
+  filter: drop-shadow(0 0 8px rgba(223, 186, 109, 0.7)) brightness(1.15);
+}
+
+/* 8. MAP */
+.map-container {
+  left: 1377px;
+  top: 517px;
+  width: 316px;
+  height: 319px;
+  z-index: 5;
+  cursor: pointer;
+  display: block;
+  transition: transform 0.2s ease, filter 0.2s ease;
+}
+
+.map-container:hover {
+  transform: scale(1.03);
+  filter: drop-shadow(0 0 16px rgba(223, 186, 109, 0.85));
+}
+
+.map-frame-layer {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 316px;
+  height: 319px;
+  z-index: 3;
+}
+
+.map-image-layer {
+  position: absolute;
+  left: 9px;
+  top: 9px;
+  width: 297px;
+  height: 297px;
+  object-fit: cover;
+  z-index: 2;
+}
