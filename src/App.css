@@ -1,4 +1,4 @@
-﻿/* Fullscreen fixed wrapper covering 100vw x 100vh */
+/* Fullscreen fixed wrapper covering 100vw x 100vh */
 .canvas-wrapper {
   position: fixed;
   top: 0;
@@ -340,6 +340,7 @@
 }
 
 /* 7. ADDRESS Column */
+.address-title,
 .address-header {
   left: 1333px;
   top: 210px;
@@ -348,7 +349,8 @@
   z-index: 5;
 }
 
-.address-title img {
+.address-title img,
+.address-header img {
   width: 349px;
   height: 37px;
 }
