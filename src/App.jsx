@@ -51,7 +51,7 @@ function App() {
 
   return (
     <div className="canvas-wrapper" style={{ backgroundImage: `url(${bgImg})` }}>
-      <div className="canvas-stage" style={{ backgroundImage: `url(${bgImg})` }}>
+      <div className="canvas-stage">
 
         {/* FEEDBACK Header */}
         <div className="stage-elem feedback-header">
