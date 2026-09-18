@@ -27,6 +27,9 @@
   transform: translate(-50%, -50%) scale(var(--stage-scale, 1));
   transform-origin: center center;
   pointer-events: auto;
+  background-size: 1920px 1080px;
+  background-position: center center;
+  background-repeat: no-repeat;
 }
 
 /* Stage element positioning */

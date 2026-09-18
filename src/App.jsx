@@ -1,4 +1,4 @@
-﻿import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import './App.css';
 
 // Assets
@@ -51,7 +51,7 @@ function App() {
 
   return (
     <div className="canvas-wrapper" style={{ backgroundImage: `url(${bgImg})` }}>
-      <div className="canvas-stage">
+      <div className="canvas-stage" style={{ backgroundImage: `url(${bgImg})` }}>
 
         {/* FEEDBACK Header */}
         <div className="stage-elem feedback-header">
