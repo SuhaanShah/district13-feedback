@@ -56,18 +56,20 @@
   height: 47px;
 }
 
-/* 2. Tribute Subtitle */
+/* 2. Tribute Subtitle & Gold Line */
 .tribute-subtitle {
   left: 690px;
-  top: 315px;
+  top: 305px;
   width: 420px;
-  height: 30px;
+  height: 45px;
   z-index: 5;
+  filter: drop-shadow(0 0 6px rgba(223, 186, 109, 0.45));
 }
 
 .tribute-subtitle img {
   width: 420px;
-  height: 30px;
+  height: 45px;
+  object-fit: contain;
 }
 
 /* 3. Feedback Card Box */
@@ -318,7 +320,7 @@
 }
 
 /* 7. ADDRESS Column */
-.address-title {
+.address-header {
   left: 1333px;
   top: 210px;
   width: 349px;

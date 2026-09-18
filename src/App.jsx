@@ -14,7 +14,7 @@ import iconInstagram from './assets/icon_instagram.png';
 import iconLinkedin from './assets/icon_linkedin.png';
 import iconEmail from './assets/icon_email.png';
 import feedbackTitle from './assets/feedback_title.png';
-import leaveYourMarkTribute from './assets/leave_your_mark_tribute.png';
+import leaveYourMarkComplete from './assets/leave_your_mark_complete.png';
 import cleanCardTransparent from './assets/clean_card_transparent.png';
 import addressTitle from './assets/address_title.png';
 import addressText from './assets/address_text.png';
@@ -30,7 +30,6 @@ function App() {
     const updateScale = () => {
       const scaleX = window.innerWidth / 1920;
       const scaleY = window.innerHeight / 1080;
-      // Scale uniformly to fit perfectly within the viewport
       const s = Math.min(scaleX, scaleY);
       document.documentElement.style.setProperty('--stage-scale', s.toString());
     };
@@ -59,9 +58,9 @@ function App() {
           <img src={feedbackTitle} alt="FEEDBACK" />
         </div>
 
-        {/* Tribute Subtitle */}
+        {/* Tribute Subtitle & Line */}
         <div className="stage-elem tribute-subtitle">
-          <img src={leaveYourMarkTribute} alt="LEAVE YOUR MARK TRIBUTE" />
+          <img src={leaveYourMarkComplete} alt="LEAVE YOUR MARK TRIBUTE" />
         </div>
 
         {/* Feedback Card Box with Exact Figma Graphics */}
