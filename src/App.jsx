@@ -3,6 +3,7 @@ import './App.css';
 
 // Assets
 import bgImg from './assets/background_hd.jpg';
+import bgMobileImg from './assets/background_mobile.jpg';
 import infoTitle from './assets/info_title.png';
 import homeLink from './assets/home_link.png';
 import teamLink from './assets/team_link.png';
@@ -54,7 +55,13 @@ function App() {
   };
 
   return (
-    <div className="canvas-wrapper" style={{ backgroundImage: `url(${bgImg})`, '--mobile-bg-url': `url(${bgImg})` }}>
+    <div
+      className="canvas-wrapper"
+      style={{
+        backgroundImage: `url(${bgImg})`,
+        '--mobile-bg': `url(${bgMobileImg})`
+      }}
+    >
       <div className="canvas-stage">
 
         {/* FEEDBACK Header */}
