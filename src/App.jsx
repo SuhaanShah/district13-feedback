@@ -92,9 +92,10 @@ function App() {
             <input
               type="text"
               name="name"
+              placeholder="Name"
               value={name}
               onChange={(e) => setName(e.target.value)}
-              className={`feedback-input name-input-field ${name ? 'has-value' : ''}`}
+              className="feedback-input name-input-field"
               autoComplete="off"
               spellCheck="false"
               required
@@ -104,9 +105,10 @@ function App() {
             <input
               type="tel"
               name="phone"
+              placeholder="Phone Number"
               value={phone}
               onChange={(e) => setPhone(e.target.value)}
-              className={`feedback-input phone-input-field ${phone ? 'has-value' : ''}`}
+              className="feedback-input phone-input-field"
               autoComplete="off"
               spellCheck="false"
               required
@@ -117,7 +119,9 @@ function App() {
               type="submit"
               className="feedback-submit-btn"
               title="Send Request"
-            />
+            >
+              <span>— SEND REQUEST —</span>
+            </button>
           </form>
 
           {/* Submission Toast */}
