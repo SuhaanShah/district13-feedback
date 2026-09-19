@@ -45,7 +45,7 @@
 
 /* 1. FEEDBACK Header */
 .feedback-header {
-  left: 659px;
+  left: 667px;
   top: 231px;
   width: 478px;
   height: 47px;
@@ -59,9 +59,9 @@
 
 /* 2. Tribute Subtitle & Gold Line Component */
 .tribute-block {
-  left: 580px;
-  top: 308px;
-  width: 760px;
+  left: 636px;
+  top: 312px;
+  width: 540px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -72,11 +72,11 @@
 .tribute-text-heading {
   color: #dfba6d;
   font-family: 'Rajdhani', sans-serif;
-  font-size: 19px;
+  font-size: 16px;
   font-weight: 600;
-  letter-spacing: 0.58em;
+  letter-spacing: 0.32em;
   text-transform: uppercase;
-  margin-bottom: 8px;
+  margin-bottom: 6px;
   text-align: center;
   text-shadow: 0 0 10px rgba(223, 186, 109, 0.5);
   white-space: nowrap;
@@ -84,7 +84,7 @@
 }
 
 .tribute-gold-line {
-  width: 628px;
+  width: 418px;
   height: 2px;
   display: block;
   object-fit: fill;
@@ -258,7 +258,7 @@
 
 /* 5. CONTACT US Column */
 .contact-us-title {
-  left: 163px;
+  left: 135px;
   top: 534px;
   width: 410px;
   height: 34px;
@@ -271,8 +271,8 @@
 }
 
 .contact-person-block {
-  left: 104px;
-  top: 631px;
+  left: 80px;
+  top: 628px;
   width: 529px;
   height: 111px;
   z-index: 5;
@@ -301,7 +301,7 @@
 
 /* 6. SOCIAL MEDIA Column */
 .social-media-title {
-  left: 168px;
+  left: 115px;
   top: 833px;
   width: 400px;
   height: 50px;
@@ -314,9 +314,9 @@
 }
 
 .social-icons-container {
-  left: 196px;
+  left: 125px;
   top: 900px;
-  width: 344px;
+  width: 330px;
   height: 90px;
   display: flex;
   align-items: center;
