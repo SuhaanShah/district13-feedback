@@ -54,7 +54,7 @@ function App() {
   };
 
   return (
-    <div className="canvas-wrapper" style={{ backgroundImage: `url(${bgImg})` }}>
+    <div className="canvas-wrapper" style={{ backgroundImage: `url(${bgImg})`, '--mobile-bg-url': `url(${bgImg})` }}>
       <div className="canvas-stage">
 
         {/* FEEDBACK Header */}
