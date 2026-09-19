@@ -28,6 +28,10 @@ function App() {
 
   useEffect(() => {
     const updateScale = () => {
+      if (window.innerWidth <= 900) {
+        document.documentElement.style.setProperty('--stage-scale', '1');
+        return;
+      }
       const scaleX = window.innerWidth / 1920;
       const scaleY = window.innerHeight / 1080;
       const s = Math.min(scaleX, scaleY);

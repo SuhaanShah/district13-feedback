@@ -14,3 +14,12 @@ html, body, #root {
   font-family: 'Rajdhani', sans-serif;
   user-select: none;
 }
+
+@media screen and (max-width: 900px) {
+  html, body, #root {
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+    height: auto !important;
+    min-height: 100% !important;
+  }
+}

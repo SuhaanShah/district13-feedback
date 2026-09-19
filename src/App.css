@@ -59,9 +59,9 @@
 
 /* 2. Tribute Subtitle & Gold Line Component */
 .tribute-block {
-  left: 659px;
+  left: 580px;
   top: 308px;
-  width: 478px;
+  width: 760px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -72,11 +72,11 @@
 .tribute-text-heading {
   color: #dfba6d;
   font-family: 'Rajdhani', sans-serif;
-  font-size: 15px;
+  font-size: 19px;
   font-weight: 600;
-  letter-spacing: 0.22em;
+  letter-spacing: 0.58em;
   text-transform: uppercase;
-  margin-bottom: 6px;
+  margin-bottom: 8px;
   text-align: center;
   text-shadow: 0 0 10px rgba(223, 186, 109, 0.5);
   white-space: nowrap;
@@ -84,11 +84,11 @@
 }
 
 .tribute-gold-line {
-  width: 322px;
+  width: 628px;
   height: 2px;
   display: block;
   object-fit: fill;
-  filter: drop-shadow(0 0 3px rgba(223, 186, 109, 0.8)) brightness(1.25);
+  filter: drop-shadow(0 0 4px rgba(223, 186, 109, 0.8)) brightness(1.25);
   image-rendering: -webkit-optimize-contrast;
   image-rendering: crisp-edges;
 }
@@ -221,12 +221,12 @@
 
 .nav-links-container {
   left: 266px;
-  top: 300px;
+  top: 290px;
   width: 203px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 16px;
+  gap: 14px;
   z-index: 5;
 }
 
@@ -237,8 +237,8 @@
 }
 
 .home-link img {
-  width: 179px;
-  height: 40px;
+  width: 203px;
+  height: 39px;
 }
 
 .team-link img {
@@ -258,7 +258,7 @@
 
 /* 5. CONTACT US Column */
 .contact-us-title {
-  left: 139px;
+  left: 163px;
   top: 534px;
   width: 410px;
   height: 34px;
@@ -301,7 +301,7 @@
 
 /* 6. SOCIAL MEDIA Column */
 .social-media-title {
-  left: 96px;
+  left: 168px;
   top: 833px;
   width: 400px;
   height: 50px;
@@ -314,7 +314,7 @@
 }
 
 .social-icons-container {
-  left: 117px;
+  left: 196px;
   top: 900px;
   width: 344px;
   height: 90px;
@@ -416,4 +416,266 @@
   height: 297px;
   object-fit: cover;
   z-index: 2;
+}
+
+/* =========================================================
+   MOBILE RESPONSIVE VIEW (PHONES & PORTRAIT TABLETS)
+   ========================================================= */
+@media screen and (max-width: 900px), screen and (max-device-width: 900px) and (orientation: portrait) {
+  .canvas-wrapper {
+    position: relative !important;
+    width: 100% !important;
+    min-height: 100vh !important;
+    height: auto !important;
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    padding: 36px 16px 80px !important;
+    background-attachment: fixed !important;
+    background-size: cover !important;
+    background-position: center top !important;
+  }
+
+  .canvas-stage {
+    position: relative !important;
+    left: auto !important;
+    top: auto !important;
+    width: 100% !important;
+    max-width: 440px !important;
+    height: auto !important;
+    transform: none !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 24px !important;
+    background: transparent !important;
+  }
+
+  .stage-elem {
+    position: relative !important;
+    left: auto !important;
+    top: auto !important;
+    right: auto !important;
+    bottom: auto !important;
+    transform: none !important;
+  }
+
+  /* 1. Feedback Header */
+  .feedback-header {
+    width: 100% !important;
+    max-width: 320px !important;
+    height: auto !important;
+    display: flex !important;
+    justify-content: center !important;
+  }
+
+  .feedback-header img {
+    width: 100% !important;
+    height: auto !important;
+    max-height: 48px !important;
+  }
+
+  /* 2. Tribute Subtitle & Gold Divider */
+  .tribute-block {
+    width: 100% !important;
+    max-width: 380px !important;
+    margin-top: -8px !important;
+  }
+
+  .tribute-text-heading {
+    font-size: 13px !important;
+    letter-spacing: 0.28em !important;
+    margin-bottom: 6px !important;
+  }
+
+  .tribute-gold-line {
+    width: 90% !important;
+    max-width: 340px !important;
+  }
+
+  /* 3. Feedback Card Box */
+  .feedback-card {
+    width: 100% !important;
+    max-width: 380px !important;
+    height: 308px !important;
+    margin: 4px 0 12px !important;
+  }
+
+  .card-base-img,
+  .card-interactive-overlay {
+    width: 100% !important;
+    height: 100% !important;
+  }
+
+  .feedback-input {
+    left: 25.6% !important;
+    width: 61.8% !important;
+    height: 12.2% !important;
+    font-size: 16px !important;
+  }
+
+  .name-input-field {
+    top: 18.8% !important;
+  }
+
+  .phone-input-field {
+    top: 42.2% !important;
+  }
+
+  .feedback-submit-btn {
+    left: 20.7% !important;
+    top: 67.5% !important;
+    width: 63.4% !important;
+    height: 15% !important;
+  }
+
+  /* 4. INFO & Nav Links */
+  .info-title {
+    width: 100% !important;
+    height: auto !important;
+    display: flex !important;
+    justify-content: center !important;
+    margin-top: 8px !important;
+  }
+
+  .info-title img {
+    width: 140px !important;
+    height: auto !important;
+  }
+
+  .nav-links-container {
+    width: 100% !important;
+    flex-direction: row !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    gap: 16px 24px !important;
+    margin-top: -8px !important;
+  }
+
+  .home-link img,
+  .team-link img {
+    width: 110px !important;
+    height: auto !important;
+  }
+
+  .events-link img {
+    width: 90px !important;
+    height: auto !important;
+  }
+
+  /* 5. CONTACT US */
+  .contact-us-title {
+    width: 100% !important;
+    height: auto !important;
+    display: flex !important;
+    justify-content: center !important;
+    margin-top: 12px !important;
+  }
+
+  .contact-us-title img {
+    width: 260px !important;
+    height: auto !important;
+  }
+
+  .contact-person-block {
+    width: 100% !important;
+    max-width: 380px !important;
+    height: auto !important;
+    display: flex !important;
+    justify-content: center !important;
+    margin-top: -6px !important;
+  }
+
+  .contact-person-block img {
+    width: 100% !important;
+    height: auto !important;
+  }
+
+  .phone-click-area {
+    left: 10% !important;
+    width: 80% !important;
+    height: 44px !important;
+  }
+
+  /* 6. SOCIAL MEDIA */
+  .social-media-title {
+    width: 100% !important;
+    height: auto !important;
+    display: flex !important;
+    justify-content: center !important;
+    margin-top: 12px !important;
+  }
+
+  .social-media-title img {
+    width: 250px !important;
+    height: auto !important;
+  }
+
+  .social-icons-container {
+    width: 100% !important;
+    max-width: 260px !important;
+    height: auto !important;
+    justify-content: center !important;
+    gap: 28px !important;
+    margin-top: -4px !important;
+  }
+
+  .social-btn img {
+    width: 60px !important;
+    height: 60px !important;
+  }
+
+  /* 7. ADDRESS & MAP */
+  .address-title {
+    width: 100% !important;
+    height: auto !important;
+    display: flex !important;
+    justify-content: center !important;
+    margin-top: 12px !important;
+  }
+
+  .address-title img {
+    width: 220px !important;
+    height: auto !important;
+  }
+
+  .address-block {
+    width: 100% !important;
+    max-width: 360px !important;
+    height: auto !important;
+    display: flex !important;
+    justify-content: center !important;
+    margin-top: -6px !important;
+  }
+
+  .address-click-link {
+    width: 100% !important;
+    height: auto !important;
+  }
+
+  .address-click-link img {
+    width: 100% !important;
+    height: auto !important;
+  }
+
+  .map-container {
+    width: 260px !important;
+    height: 260px !important;
+    margin-top: 4px !important;
+  }
+
+  .map-frame-layer {
+    width: 260px !important;
+    height: 260px !important;
+  }
+
+  .map-image-layer {
+    width: 244px !important;
+    height: 244px !important;
+    left: 8px !important;
+    top: 8px !important;
+  }
 }
