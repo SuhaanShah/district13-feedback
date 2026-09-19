@@ -127,13 +127,31 @@ function App() {
         </div>
 
         <nav className="stage-elem nav-links-container">
-          <a href="#home" className="nav-link home-link" title="Home">
+          <a
+            href="https://www.djss4ds.in/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="nav-link home-link"
+            title="Home"
+          >
             <img src={homeLink} alt="HOME" />
           </a>
-          <a href="#team" className="nav-link team-link" title="Team">
+          <a
+            href="https://www.djss4ds.in/team"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="nav-link team-link"
+            title="Team"
+          >
             <img src={teamLink} alt="TEAM" />
           </a>
-          <a href="#events" className="nav-link events-link" title="Events">
+          <a
+            href="https://www.djss4ds.in/events"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="nav-link events-link"
+            title="Events"
+          >
             <img src={eventsLink} alt="Events" />
           </a>
         </nav>
@@ -159,7 +177,7 @@ function App() {
 
         <div className="stage-elem social-icons-container">
           <a
-            href="https://www.instagram.com/s4ds_djsce/"
+            href="https://www.instagram.com/djs.s4ds/"
             target="_blank"
             rel="noopener noreferrer"
             className="social-btn"
@@ -168,7 +186,7 @@ function App() {
             <img src={iconInstagram} alt="Instagram" />
           </a>
           <a
-            href="https://www.linkedin.com/company/s4ds-djsce/"
+            href="https://www.linkedin.com/company/djs-s4ds/"
             target="_blank"
             rel="noopener noreferrer"
             className="social-btn"
@@ -177,9 +195,7 @@ function App() {
             <img src={iconLinkedin} alt="LinkedIn" />
           </a>
           <a
-            href="mailto:s4ds@djsce.ac.in"
-            target="_blank"
-            rel="noopener noreferrer"
+            href="mailto:info.djss4ds@gmail.com"
             className="social-btn"
             title="Email"
           >
