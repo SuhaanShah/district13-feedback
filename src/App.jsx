@@ -1,24 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
 
-// Assets
+// Graphical Assets
 import bgImg from './assets/background_hd.jpg';
 import bgMobileImg from './assets/background_mobile.jpg';
-import infoTitle from './assets/info_title.png';
-import homeLink from './assets/home_link.png';
-import teamLink from './assets/team_link.png';
-import eventsLink from './assets/events_link.png';
-import contactUsTitle from './assets/contact_us_title.png';
-import khushContact from './assets/khush_thakkar_contact.png';
-import socialMediaTitle from './assets/social_media_title.png';
 import iconInstagram from './assets/icon_instagram.png';
 import iconLinkedin from './assets/icon_linkedin.png';
 import iconEmail from './assets/icon_email.png';
-import feedbackTitle from './assets/feedback_title.png';
 import goldDividerLine from './assets/gold_divider_line.png';
 import cleanCardTransparent from './assets/clean_card_transparent.png';
-import addressTitle from './assets/address_title.png';
-import addressText from './assets/address_text.png';
 import mapGoldFrame from './assets/map_gold_frame.png';
 import mapPreview from './assets/map_preview.png';
 
@@ -66,12 +56,12 @@ function App() {
 
         {/* FEEDBACK Header */}
         <div className="stage-elem feedback-header">
-          <img src={feedbackTitle} alt="FEEDBACK" />
+          <h1 className="gold-michroma-text feedback-header-text">FEEDBACK</h1>
         </div>
 
         {/* Tribute Subtitle with original gold divider line component */}
         <div className="stage-elem tribute-block">
-          <div className="tribute-text-heading">LEAVE YOUR MARK TRIBUTE</div>
+          <div className="tribute-text-heading gold-michroma-text">LEAVE YOUR MARK TRIBUTE</div>
           <img
             src={goldDividerLine}
             className="tribute-gold-line"
@@ -79,7 +69,7 @@ function App() {
           />
         </div>
 
-        {/* Feedback Card Box with Exact Figma Graphics */}
+        {/* Feedback Card Box with Exact Figma Graphics & HTML Typography */}
         <div className="stage-elem feedback-card">
           <img
             src={cleanCardTransparent}
@@ -134,7 +124,7 @@ function App() {
 
         {/* LEFT COLUMN: INFO */}
         <div className="stage-elem info-title">
-          <img src={infoTitle} alt="INFO" />
+          <h2 className="gold-michroma-text info-title-text">INFO</h2>
         </div>
 
         <nav className="stage-elem nav-links-container">
@@ -145,7 +135,7 @@ function App() {
             className="nav-link home-link"
             title="Home"
           >
-            <img src={homeLink} alt="HOME" />
+            <span className="gold-michroma-text nav-link-text">HOME</span>
           </a>
           <a
             href="https://www.djss4ds.in/team"
@@ -154,7 +144,7 @@ function App() {
             className="nav-link team-link"
             title="Team"
           >
-            <img src={teamLink} alt="TEAM" />
+            <span className="gold-michroma-text nav-link-text">TEAM</span>
           </a>
           <a
             href="https://www.djss4ds.in/events"
@@ -163,27 +153,32 @@ function App() {
             className="nav-link events-link"
             title="Events"
           >
-            <img src={eventsLink} alt="Events" />
+            <span className="gold-michroma-text nav-link-text events-text">Events</span>
           </a>
         </nav>
 
         {/* LEFT COLUMN: CONTACT US */}
         <div className="stage-elem contact-us-title">
-          <img src={contactUsTitle} alt="CONTACT US" />
+          <h2 className="gold-michroma-text contact-us-title-text">CONTACT US</h2>
         </div>
 
         <div className="stage-elem contact-person-block">
-          <img src={khushContact} alt="Khush Thakkar (S4DS Chairperson) +919858107107" />
-          <a
-            href="tel:+919858107107"
-            className="phone-click-area"
-            title="Call +919858107107"
-          />
+          <div className="contact-person-info">
+            <div className="gold-michroma-text contact-person-name">KHUSH THAKKAR</div>
+            <div className="gold-michroma-text contact-person-role">(S4DS CHAIRPERSON)</div>
+            <a
+              href="tel:+919858107107"
+              className="gold-michroma-text contact-person-phone"
+              title="Call +919858107107"
+            >
+              +919858107107
+            </a>
+          </div>
         </div>
 
         {/* LEFT COLUMN: SOCIAL MEDIA */}
         <div className="stage-elem social-media-title">
-          <img src={socialMediaTitle} alt="SOCIAL MEDIA" />
+          <h2 className="gold-michroma-text social-media-title-text">SOCIAL MEDIA</h2>
         </div>
 
         <div className="stage-elem social-icons-container">
@@ -216,7 +211,7 @@ function App() {
 
         {/* RIGHT COLUMN: ADDRESS */}
         <div className="stage-elem address-title">
-          <img src={addressTitle} alt="ADDRESS" />
+          <h2 className="gold-michroma-text address-title-text">ADDRESS</h2>
         </div>
 
         <div className="stage-elem address-block">
@@ -227,7 +222,13 @@ function App() {
             className="address-click-link"
             title="Open in Google Maps"
           >
-            <img src={addressText} alt="Address Details" />
+            <div className="gold-michroma-text address-text-content">
+              <p>No. U-15, J.V.P.D. Scheme,</p>
+              <p>Bhaktivedanta Swami Marg,</p>
+              <p>Opp. Cooper Hospital,</p>
+              <p>Vile Parle (West),</p>
+              <p>Mumbai - 400 056, India</p>
+            </div>
           </a>
         </div>
 

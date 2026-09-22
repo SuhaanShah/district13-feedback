@@ -47,18 +47,42 @@
   image-rendering: -webkit-optimize-contrast;
 }
 
+/* =========================================================
+   PURE HTML MICHROMA GOLD TYPOGRAPHY STYLING
+   ========================================================= */
+.gold-michroma-text {
+  font-family: 'Michroma', sans-serif;
+  background: linear-gradient(180deg, #fff2be 0%, #e6c574 42%, #a87f28 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke: 0.5px rgba(115, 82, 19, 0.7);
+  filter: drop-shadow(0 0 1px rgba(223, 186, 109, 0.35));
+  user-select: none;
+  line-height: 1.1;
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
 /* 1. FEEDBACK Header */
 .feedback-header {
   left: 667px;
   top: 231px;
   width: 478px;
   height: 47px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   z-index: 5;
 }
 
-.feedback-header img {
-  width: 478px;
-  height: 47px;
+.feedback-header-text {
+  font-size: 44px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-weight: 400;
+  text-shadow: 0 0 10px rgba(223, 186, 109, 0.3);
 }
 
 /* 2. Tribute Subtitle & Gold Line Component */
@@ -74,17 +98,13 @@
 }
 
 .tribute-text-heading {
-  color: #dfba6d;
-  font-family: 'Rajdhani', sans-serif;
-  font-size: 16px;
-  font-weight: 600;
+  font-size: 13.5px;
+  font-weight: 400;
   letter-spacing: 0.32em;
   text-transform: uppercase;
   margin-bottom: 6px;
   text-align: center;
-  text-shadow: 0 0 10px rgba(223, 186, 109, 0.5);
   white-space: nowrap;
-  user-select: none;
 }
 
 .tribute-gold-line {
@@ -136,9 +156,9 @@
   color: #dfba6d;
   border: none;
   outline: none;
-  font-family: 'Rajdhani', 'Orbitron', sans-serif;
-  font-size: 21px;
-  font-weight: 700;
+  font-family: 'Michroma', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
   letter-spacing: 0.08em;
   caret-color: #dfba6d;
   padding: 0 4px;
@@ -147,9 +167,9 @@
 
 .feedback-input::placeholder {
   color: rgba(223, 186, 109, 0.72);
-  font-family: 'Rajdhani', 'Orbitron', sans-serif;
-  font-size: 21px;
-  font-weight: 700;
+  font-family: 'Michroma', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
   letter-spacing: 0.08em;
   transition: opacity 0.2s ease;
 }
@@ -181,9 +201,9 @@
   align-items: center;
   justify-content: center;
   color: #dfba6d;
-  font-family: 'Rajdhani', 'Orbitron', sans-serif;
-  font-size: 16px;
-  font-weight: 700;
+  font-family: 'Michroma', sans-serif;
+  font-size: 13.5px;
+  font-weight: 400;
   letter-spacing: 0.16em;
   text-shadow: 0 0 8px rgba(223, 186, 109, 0.5);
   transition: box-shadow 0.2s ease, transform 0.15s ease, filter 0.2s ease;
@@ -211,8 +231,8 @@
   padding: 8px 18px;
   border-radius: 4px;
   color: #dfba6d;
-  font-size: 14px;
-  font-weight: 700;
+  font-family: 'Michroma', sans-serif;
+  font-size: 12px;
   letter-spacing: 0.12em;
   box-shadow: 0 0 15px rgba(223, 186, 109, 0.6);
   z-index: 30;
@@ -231,12 +251,17 @@
   top: 214px;
   width: 170px;
   height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   z-index: 5;
 }
 
-.info-title img {
-  width: 170px;
-  height: 40px;
+.info-title-text {
+  font-size: 34px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  font-weight: 400;
 }
 
 .nav-links-container {
@@ -246,13 +271,16 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 14px;
+  gap: 16px;
   z-index: 5;
 }
 
 .nav-link {
-  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   cursor: pointer;
+  text-decoration: none;
   transition: transform 0.2s cubic-bezier(0.2, 0, 0.2, 1), filter 0.2s cubic-bezier(0.2, 0, 0.2, 1);
   will-change: transform, filter;
   backface-visibility: hidden;
@@ -260,23 +288,25 @@
   transform: translateZ(0);
 }
 
-.home-link img {
-  width: 203px;
-  height: 39px;
+.nav-link-text {
+  font-size: 30px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-weight: 400;
+  transition: filter 0.2s ease;
 }
 
-.team-link img {
-  width: 203px;
-  height: 39px;
-}
-
-.events-link img {
-  width: 148px;
-  height: 24px;
+.events-text {
+  font-size: 25px;
+  letter-spacing: 0.12em;
+  text-transform: none;
 }
 
 .nav-link:hover {
-  transform: scale(1.06);
+  transform: scale(1.08);
+}
+
+.nav-link:hover .nav-link-text {
   filter: drop-shadow(0 0 10px rgba(223, 186, 109, 0.9)) brightness(1.25);
 }
 
@@ -286,12 +316,17 @@
   top: 534px;
   width: 410px;
   height: 34px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   z-index: 5;
 }
 
-.contact-us-title img {
-  width: 410px;
-  height: 34px;
+.contact-us-title-text {
+  font-size: 30px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  font-weight: 400;
 }
 
 .contact-person-block {
@@ -299,30 +334,48 @@
   top: 628px;
   width: 529px;
   height: 111px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   z-index: 5;
 }
 
-.contact-person-block img {
-  width: 529px;
-  height: 111px;
+.contact-person-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  width: 100%;
+  text-align: center;
 }
 
-.phone-click-area {
-  position: absolute;
-  left: 80px;
-  bottom: 0;
-  width: 370px;
-  height: 42px;
+.contact-person-name {
+  font-size: 25px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-weight: 400;
+}
+
+.contact-person-role {
+  font-size: 20px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-weight: 400;
+}
+
+.contact-person-phone {
+  font-size: 26px;
+  letter-spacing: 0.16em;
+  font-weight: 400;
+  text-decoration: none;
   cursor: pointer;
-  z-index: 10;
-  transition: border-bottom 0.2s ease, box-shadow 0.2s ease;
-  border-bottom: 2px solid transparent;
-  border-radius: 4px;
+  transition: filter 0.2s ease, transform 0.2s ease;
 }
 
-.phone-click-area:hover {
-  border-bottom: 2px solid rgba(223, 186, 109, 0.85);
-  box-shadow: 0 4px 12px rgba(223, 186, 109, 0.25);
+.contact-person-phone:hover {
+  filter: drop-shadow(0 0 10px rgba(223, 186, 109, 0.9)) brightness(1.25);
+  transform: scale(1.04);
 }
 
 /* 6. SOCIAL MEDIA Column */
@@ -331,12 +384,17 @@
   top: 833px;
   width: 400px;
   height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   z-index: 5;
 }
 
-.social-media-title img {
-  width: 400px;
-  height: 50px;
+.social-media-title-text {
+  font-size: 30px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  font-weight: 400;
 }
 
 .social-icons-container {
@@ -367,19 +425,22 @@
 }
 
 /* 7. ADDRESS Column */
-.address-title,
-.address-header {
+.address-title {
   left: 1333px;
   top: 210px;
   width: 349px;
   height: 37px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   z-index: 5;
 }
 
-.address-title img,
-.address-header img {
-  width: 349px;
-  height: 37px;
+.address-title-text {
+  font-size: 32px;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  font-weight: 400;
 }
 
 .address-block {
@@ -387,25 +448,45 @@
   top: 278px;
   width: 411px;
   height: 157px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   z-index: 5;
 }
 
 .address-click-link {
   display: block;
-  width: 411px;
-  height: 157px;
+  width: 100%;
   cursor: pointer;
+  text-decoration: none;
+  text-align: center;
   transition: transform 0.2s ease, filter 0.2s ease;
 }
 
-.address-click-link img {
-  width: 411px;
-  height: 157px;
+.address-click-link:hover {
+  transform: scale(1.03);
 }
 
-.address-click-link:hover {
-  transform: scale(1.02);
-  filter: drop-shadow(0 0 8px rgba(223, 186, 109, 0.7)) brightness(1.15);
+.address-click-link:hover .address-text-content {
+  filter: drop-shadow(0 0 10px rgba(223, 186, 109, 0.8)) brightness(1.2);
+}
+
+.address-text-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 7px;
+  width: 100%;
+  font-size: 14px;
+  letter-spacing: 0.08em;
+  line-height: 1.5;
+  font-weight: 400;
+}
+
+.address-text-content p {
+  margin: 0;
+  padding: 0;
+  white-space: nowrap;
 }
 
 /* 8. MAP */
@@ -495,17 +576,16 @@
   /* 1. Feedback Header */
   .feedback-header {
     width: 100% !important;
-    max-width: 240px !important;
+    max-width: 260px !important;
     height: auto !important;
     display: flex !important;
     justify-content: center !important;
     margin-bottom: 8px !important;
   }
 
-  .feedback-header img {
-    width: 100% !important;
-    height: auto !important;
-    max-height: 36px !important;
+  .feedback-header-text {
+    font-size: 23px !important;
+    letter-spacing: 0.1em !important;
   }
 
   /* 2. Tribute Subtitle & Gold Divider */
@@ -517,8 +597,8 @@
   }
 
   .tribute-text-heading {
-    font-size: 10px !important;
-    letter-spacing: 0.22em !important;
+    font-size: 8.5px !important;
+    letter-spacing: 0.2em !important;
     margin-bottom: 5px !important;
   }
 
@@ -546,18 +626,20 @@
     left: 25.6% !important;
     width: 61.8% !important;
     height: 12.2% !important;
-    font-size: 15px !important;
-    font-weight: 700 !important;
+    font-size: 11.5px !important;
+    font-weight: 400 !important;
     color: #dfba6d !important;
-    font-family: 'Rajdhani', 'Orbitron', sans-serif !important;
+    font-family: 'Michroma', sans-serif !important;
     padding: 0 4px !important;
+    letter-spacing: 0.05em !important;
   }
 
   .feedback-input::placeholder {
-    font-size: 15px !important;
-    font-weight: 700 !important;
+    font-size: 11.5px !important;
+    font-weight: 400 !important;
     color: rgba(223, 186, 109, 0.72) !important;
-    font-family: 'Rajdhani', 'Orbitron', sans-serif !important;
+    font-family: 'Michroma', sans-serif !important;
+    letter-spacing: 0.05em !important;
   }
 
   .name-input-field {
@@ -573,14 +655,14 @@
     top: 67.5% !important;
     width: 63.4% !important;
     height: 15% !important;
-    font-size: 12.5px !important;
-    font-weight: 700 !important;
-    letter-spacing: 0.12em !important;
+    font-size: 10px !important;
+    font-weight: 400 !important;
+    letter-spacing: 0.1em !important;
     display: flex !important;
     align-items: center !important;
     justify-content: center !important;
     color: #dfba6d !important;
-    font-family: 'Rajdhani', 'Orbitron', sans-serif !important;
+    font-family: 'Michroma', sans-serif !important;
     text-shadow: 0 0 6px rgba(223, 186, 109, 0.5) !important;
   }
 
@@ -594,9 +676,9 @@
     margin-bottom: 14px !important;
   }
 
-  .info-title img {
-    width: 90px !important;
-    height: auto !important;
+  .info-title-text {
+    font-size: 19px !important;
+    letter-spacing: 0.12em !important;
   }
 
   .nav-links-container {
@@ -609,15 +691,14 @@
     margin-bottom: 42px !important;
   }
 
-  .home-link img,
-  .team-link img {
-    width: 76px !important;
-    height: auto !important;
+  .nav-link-text {
+    font-size: 16px !important;
+    letter-spacing: 0.14em !important;
   }
 
-  .events-link img {
-    width: 62px !important;
-    height: auto !important;
+  .events-text {
+    font-size: 14px !important;
+    letter-spacing: 0.1em !important;
   }
 
   /* 5. CONTACT US */
@@ -630,14 +711,14 @@
     margin-bottom: 14px !important;
   }
 
-  .contact-us-title img {
-    width: 180px !important;
-    height: auto !important;
+  .contact-us-title-text {
+    font-size: 17px !important;
+    letter-spacing: 0.16em !important;
   }
 
   .contact-person-block {
     width: 100% !important;
-    max-width: 270px !important;
+    max-width: 290px !important;
     height: auto !important;
     display: flex !important;
     justify-content: center !important;
@@ -645,15 +726,23 @@
     margin-bottom: 42px !important;
   }
 
-  .contact-person-block img {
-    width: 100% !important;
-    height: auto !important;
+  .contact-person-info {
+    gap: 5px !important;
   }
 
-  .phone-click-area {
-    left: 10% !important;
-    width: 80% !important;
-    height: 32px !important;
+  .contact-person-name {
+    font-size: 14.5px !important;
+    letter-spacing: 0.14em !important;
+  }
+
+  .contact-person-role {
+    font-size: 11.5px !important;
+    letter-spacing: 0.1em !important;
+  }
+
+  .contact-person-phone {
+    font-size: 14.5px !important;
+    letter-spacing: 0.12em !important;
   }
 
   /* 6. SOCIAL MEDIA */
@@ -666,9 +755,9 @@
     margin-bottom: 18px !important;
   }
 
-  .social-media-title img {
-    width: 170px !important;
-    height: auto !important;
+  .social-media-title-text {
+    font-size: 16px !important;
+    letter-spacing: 0.16em !important;
   }
 
   .social-icons-container {
@@ -696,14 +785,14 @@
     margin-bottom: 14px !important;
   }
 
-  .address-title img {
-    width: 155px !important;
-    height: auto !important;
+  .address-title-text {
+    font-size: 17px !important;
+    letter-spacing: 0.18em !important;
   }
 
   .address-block {
     width: 100% !important;
-    max-width: 260px !important;
+    max-width: 290px !important;
     height: auto !important;
     display: flex !important;
     justify-content: center !important;
@@ -711,14 +800,11 @@
     margin-bottom: 24px !important;
   }
 
-  .address-click-link {
-    width: 100% !important;
-    height: auto !important;
-  }
-
-  .address-click-link img {
-    width: 100% !important;
-    height: auto !important;
+  .address-text-content {
+    font-size: 10px !important;
+    letter-spacing: 0.05em !important;
+    gap: 3px !important;
+    line-height: 1.4 !important;
   }
 
   .map-container {
