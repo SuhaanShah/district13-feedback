@@ -10,7 +10,6 @@ import iconEmail from './assets/icon_email.png';
 import goldDividerLine from './assets/gold_divider_line.png';
 import cleanCardTransparent from './assets/clean_card_transparent.png';
 import mapGoldFrame from './assets/map_gold_frame.png';
-import mapPreview from './assets/map_preview.png';
 
 function App() {
   const [name, setName] = useState('');
@@ -232,17 +231,18 @@ function App() {
           </a>
         </div>
 
-        {/* RIGHT COLUMN: MAP */}
-        <a
-          href="https://maps.google.com/?q=SVKM+Dwarkadas+J+Sanghvi+College+of+Engineering+Mumbai"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="stage-elem map-container"
-          title="Open in Google Maps"
-        >
+        {/* RIGHT COLUMN: INTERACTIVE MAP (Exact Xtract 4.0 Embed) */}
+        <div className="stage-elem map-container">
+          <iframe
+            className="map-iframe-layer"
+            title="Dwarkadas J. Sanghvi College of Engineering"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1885.0063298265954!2d72.8358360896312!3d19.10710054930386!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c9c676018b43%3A0x75f29a4205098f99!2sDwarkadas+J.+Sanghvi+College+of+Engineering!5e0!3m2!1sen!2sin!4v1511171768631"
+            allowFullScreen
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+          />
           <img src={mapGoldFrame} className="map-frame-layer" alt="Map Frame" />
-          <img src={mapPreview} className="map-image-layer" alt="Map Location" />
-        </a>
+        </div>
 
       </div>
     </div>

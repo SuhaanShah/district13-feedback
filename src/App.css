@@ -489,20 +489,20 @@
   white-space: nowrap;
 }
 
-/* 8. MAP */
+/* 8. INTERACTIVE MAP (Exact Xtract 4.0 Embed) */
 .map-container {
   left: 1377px;
   top: 517px;
   width: 316px;
   height: 319px;
   z-index: 5;
-  cursor: pointer;
   display: block;
+  position: absolute;
   transition: transform 0.2s ease, filter 0.2s ease;
 }
 
 .map-container:hover {
-  transform: scale(1.03);
+  transform: scale(1.02);
   filter: drop-shadow(0 0 16px rgba(223, 186, 109, 0.85));
 }
 
@@ -512,17 +512,20 @@
   top: 0;
   width: 316px;
   height: 319px;
-  z-index: 3;
+  z-index: 4;
+  pointer-events: none;
 }
 
-.map-image-layer {
+.map-iframe-layer {
   position: absolute;
-  left: 9px;
-  top: 9px;
-  width: 297px;
-  height: 297px;
-  object-fit: cover;
+  left: 10px;
+  top: 10px;
+  width: 296px;
+  height: 298px;
+  border: 0;
+  border-radius: 6px;
   z-index: 2;
+  background-color: #1a1a1a;
 }
 
 /* =========================================================
@@ -812,17 +815,21 @@
     height: 190px !important;
     margin-top: 0 !important;
     margin-bottom: 20px !important;
+    position: relative !important;
   }
 
   .map-frame-layer {
     width: 190px !important;
     height: 190px !important;
+    pointer-events: none !important;
   }
 
-  .map-image-layer {
+  .map-iframe-layer {
     width: 178px !important;
     height: 178px !important;
     left: 6px !important;
     top: 6px !important;
+    border: 0 !important;
+    border-radius: 4px !important;
   }
 }
