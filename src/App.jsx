@@ -197,7 +197,7 @@ function App() {
             className="nav-link events-link"
             title="Events"
           >
-            <span className="gold-michroma-text nav-link-text events-text">Events</span>
+            <span className="gold-michroma-text nav-link-text">EVENTS</span>
           </a>
         </nav>
 

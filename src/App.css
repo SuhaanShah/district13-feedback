@@ -432,10 +432,10 @@
    ========================================================= */
 /* A. INFO Title */
 .info-title {
-  left: 255px;
+  left: 230px;
   top: 210px;
-  width: 170px;
-  height: 40px;
+  width: 220px;
+  height: 38px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -443,8 +443,8 @@
 }
 
 .info-title-text {
-  font-size: 34px;
-  letter-spacing: 0.15em;
+  font-size: 30px;
+  letter-spacing: 0.2em;
   text-transform: uppercase;
   font-weight: 400;
 }
@@ -452,7 +452,7 @@
 /* B. Nav Links */
 .nav-links-container {
   left: 238px;
-  top: 285px;
+  top: 278px;
   width: 204px;
   display: flex;
   flex-direction: column;
@@ -475,17 +475,17 @@
 }
 
 .nav-link-text {
-  font-size: 30px;
-  letter-spacing: 0.18em;
+  font-size: 26px;
+  letter-spacing: 0.16em;
   text-transform: uppercase;
   font-weight: 400;
   transition: filter 0.2s ease;
 }
 
 .events-text {
-  font-size: 25px;
-  letter-spacing: 0.12em;
-  text-transform: none;
+  font-size: 26px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
 }
 
 .nav-link:hover {
@@ -499,7 +499,7 @@
 /* C. CONTACT US Title */
 .contact-us-title {
   left: 135px;
-  top: 530px;
+  top: 468px;
   width: 410px;
   height: 36px;
   display: flex;
@@ -510,7 +510,7 @@
 
 .contact-us-title-text {
   font-size: 30px;
-  letter-spacing: 0.22em;
+  letter-spacing: 0.2em;
   text-transform: uppercase;
   font-weight: 400;
 }
@@ -518,9 +518,9 @@
 /* D. Contact Person (Khush Thakkar) */
 .contact-person-block {
   left: 75px;
-  top: 618px;
+  top: 518px;
   width: 530px;
-  height: 115px;
+  height: 110px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -532,28 +532,28 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 7px;
+  gap: 6px;
   width: 100%;
   text-align: center;
 }
 
 .contact-person-name {
-  font-size: 25px;
-  letter-spacing: 0.18em;
+  font-size: 24px;
+  letter-spacing: 0.16em;
   text-transform: uppercase;
   font-weight: 400;
 }
 
 .contact-person-role {
-  font-size: 20px;
+  font-size: 18px;
   letter-spacing: 0.14em;
   text-transform: uppercase;
   font-weight: 400;
 }
 
 .contact-person-phone {
-  font-size: 26px;
-  letter-spacing: 0.16em;
+  font-size: 24px;
+  letter-spacing: 0.14em;
   font-weight: 400;
   text-decoration: none;
   cursor: pointer;
@@ -568,9 +568,9 @@
 /* E. SOCIAL MEDIA Title */
 .social-media-title {
   left: 140px;
-  top: 825px;
+  top: 698px;
   width: 400px;
-  height: 50px;
+  height: 40px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -587,9 +587,9 @@
 /* F. Social Icons */
 .social-icons-container {
   left: 175px;
-  top: 895px;
+  top: 754px;
   width: 330px;
-  height: 90px;
+  height: 84px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -603,8 +603,8 @@
 }
 
 .social-btn img {
-  width: 88px;
-  height: 88px;
+  width: 82px;
+  height: 82px;
 }
 
 .social-btn:hover {
@@ -629,8 +629,8 @@
 }
 
 .address-title-text {
-  font-size: 32px;
-  letter-spacing: 0.24em;
+  font-size: 30px;
+  letter-spacing: 0.2em;
   text-transform: uppercase;
   font-weight: 400;
 }
@@ -877,12 +877,12 @@
     display: flex !important;
     justify-content: center !important;
     margin-top: 0 !important;
-    margin-bottom: 14px !important;
+    margin-bottom: 12px !important;
   }
 
   .info-title-text {
-    font-size: 19px !important;
-    letter-spacing: 0.12em !important;
+    font-size: 18px !important;
+    letter-spacing: 0.16em !important;
   }
 
   .nav-links-container {
@@ -890,19 +890,19 @@
     flex-direction: row !important;
     flex-wrap: wrap !important;
     justify-content: center !important;
-    gap: 12px 24px !important;
+    gap: 10px 24px !important;
     margin-top: 0 !important;
-    margin-bottom: 42px !important;
+    margin-bottom: 32px !important;
   }
 
   .nav-link-text {
-    font-size: 16px !important;
+    font-size: 15px !important;
     letter-spacing: 0.14em !important;
   }
 
   .events-text {
-    font-size: 14px !important;
-    letter-spacing: 0.1em !important;
+    font-size: 15px !important;
+    letter-spacing: 0.14em !important;
   }
 
   /* 5. CONTACT US */
@@ -912,11 +912,11 @@
     display: flex !important;
     justify-content: center !important;
     margin-top: 0 !important;
-    margin-bottom: 14px !important;
+    margin-bottom: 8px !important;
   }
 
   .contact-us-title-text {
-    font-size: 17px !important;
+    font-size: 18px !important;
     letter-spacing: 0.16em !important;
   }
 
@@ -927,11 +927,11 @@
     display: flex !important;
     justify-content: center !important;
     margin-top: 0 !important;
-    margin-bottom: 42px !important;
+    margin-bottom: 32px !important;
   }
 
   .contact-person-info {
-    gap: 5px !important;
+    gap: 4px !important;
   }
 
   .contact-person-name {
@@ -940,12 +940,12 @@
   }
 
   .contact-person-role {
-    font-size: 11.5px !important;
+    font-size: 11px !important;
     letter-spacing: 0.1em !important;
   }
 
   .contact-person-phone {
-    font-size: 14.5px !important;
+    font-size: 14px !important;
     letter-spacing: 0.12em !important;
   }
 
@@ -956,11 +956,11 @@
     display: flex !important;
     justify-content: center !important;
     margin-top: 0 !important;
-    margin-bottom: 18px !important;
+    margin-bottom: 12px !important;
   }
 
   .social-media-title-text {
-    font-size: 16px !important;
+    font-size: 18px !important;
     letter-spacing: 0.16em !important;
   }
 
@@ -971,7 +971,7 @@
     justify-content: center !important;
     gap: 24px !important;
     margin-top: 0 !important;
-    margin-bottom: 42px !important;
+    margin-bottom: 34px !important;
   }
 
   .social-btn img {
@@ -986,12 +986,12 @@
     display: flex !important;
     justify-content: center !important;
     margin-top: 0 !important;
-    margin-bottom: 14px !important;
+    margin-bottom: 12px !important;
   }
 
   .address-title-text {
-    font-size: 17px !important;
-    letter-spacing: 0.18em !important;
+    font-size: 18px !important;
+    letter-spacing: 0.16em !important;
   }
 
   .address-block {
