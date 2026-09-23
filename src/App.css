@@ -140,7 +140,7 @@
 /* B. Tribute Subtitle & Gold Line Component - Centered at X = 960px */
 .tribute-block {
   left: 690px;
-  top: 308px;
+  top: 284px;
   width: 540px;
   display: flex;
   flex-direction: column;
@@ -150,11 +150,11 @@
 }
 
 .tribute-text-heading {
-  font-size: 13.5px;
+  font-size: 18px;
   font-weight: 400;
-  letter-spacing: 0.32em;
+  letter-spacing: 0.26em;
   text-transform: uppercase;
-  margin-bottom: 7px;
+  margin-bottom: 8px;
   text-align: center;
   white-space: nowrap;
 }
@@ -776,7 +776,7 @@
     height: auto !important;
     display: flex !important;
     justify-content: center !important;
-    margin-bottom: 8px !important;
+    margin-bottom: 4px !important;
   }
 
   .feedback-header-text {
@@ -793,8 +793,8 @@
   }
 
   .tribute-text-heading {
-    font-size: 8.5px !important;
-    letter-spacing: 0.2em !important;
+    font-size: 12px !important;
+    letter-spacing: 0.16em !important;
     margin-bottom: 5px !important;
   }
 
