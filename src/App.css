@@ -1,4 +1,6 @@
-/* Fullscreen fixed wrapper covering 100vw x 100vh */
+/* =========================================================
+   CANVAS & STAGE SYSTEM (Full 1920x1080 Aspect-Ratio Scaled)
+   ========================================================= */
 .canvas-wrapper {
   position: fixed;
   top: 0;
@@ -17,7 +19,7 @@
   background-color: #0b0506;
 }
 
-/* 1920x1080 Stage scaled uniformly to prevent any blur or aspect ratio distortion */
+/* 1920x1080 Stage scaled uniformly to prevent any aspect ratio distortion */
 .canvas-stage {
   position: absolute;
   left: 50%;
@@ -48,7 +50,54 @@
 }
 
 /* =========================================================
-   PURE HTML MICHROMA GOLD TYPOGRAPHY STYLING
+   1. PURE CSS FLOATING EMBER PARTICLES
+   ========================================================= */
+.ember-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 2;
+}
+
+.ember {
+  position: absolute;
+  bottom: -25px;
+  background: radial-gradient(circle, #fff7c2 15%, #ffb300 55%, #e65100 100%);
+  border-radius: 50%;
+  box-shadow: 0 0 6px #ffb300, 0 0 14px #ff6f00, 0 0 24px rgba(255, 87, 34, 0.7);
+  opacity: 0;
+  animation: emberRise ease-in-out infinite, emberFlicker 0.4s ease-in-out infinite alternate;
+  will-change: transform, opacity;
+}
+
+@keyframes emberRise {
+  0% {
+    transform: translate3d(0, 0, 0) scale(0.6);
+    opacity: 0;
+  }
+  15% {
+    opacity: 0.95;
+  }
+  75% {
+    opacity: 0.85;
+  }
+  100% {
+    transform: translate3d(var(--ember-drift, 20px), -115vh, 0) scale(1.25);
+    opacity: 0;
+  }
+}
+
+@keyframes emberFlicker {
+  from { filter: brightness(1); }
+  to { filter: brightness(1.7); }
+}
+
+/* =========================================================
+   2. PURE HTML MICHROMA GOLD TYPOGRAPHY
    ========================================================= */
 .gold-michroma-text {
   font-family: 'Michroma', sans-serif;
@@ -65,12 +114,15 @@
   text-align: center;
 }
 
-/* 1. FEEDBACK Header */
+/* =========================================================
+   3. CENTER COLUMN (FEEDBACK, TRIBUTE & SLEEK FORM)
+   ========================================================= */
+/* A. FEEDBACK Header - Mathematically Centered at X = 960px */
 .feedback-header {
-  left: 667px;
-  top: 231px;
+  left: 721px;
+  top: 228px;
   width: 478px;
-  height: 47px;
+  height: 48px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -78,17 +130,17 @@
 }
 
 .feedback-header-text {
-  font-size: 44px;
+  font-size: 45px;
   letter-spacing: 0.12em;
   text-transform: uppercase;
   font-weight: 400;
   text-shadow: 0 0 10px rgba(223, 186, 109, 0.3);
 }
 
-/* 2. Tribute Subtitle & Gold Line Component */
+/* B. Tribute Subtitle & Gold Line Component - Centered at X = 960px */
 .tribute-block {
-  left: 636px;
-  top: 312px;
+  left: 690px;
+  top: 308px;
   width: 540px;
   display: flex;
   flex-direction: column;
@@ -102,7 +154,7 @@
   font-weight: 400;
   letter-spacing: 0.32em;
   text-transform: uppercase;
-  margin-bottom: 6px;
+  margin-bottom: 7px;
   text-align: center;
   white-space: nowrap;
 }
@@ -117,138 +169,271 @@
   image-rendering: crisp-edges;
 }
 
-/* 3. Feedback Card Box */
-.feedback-card {
-  left: 683px;
-  top: 385px;
-  width: 445px;
-  height: 360px;
+/* C. Center Tribute Form Container (Center Box Removed) - Centered at X = 960px */
+.tribute-form-container {
+  left: 730px;
+  top: 382px;
+  width: 460px;
+  min-height: 330px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   z-index: 10;
-  box-shadow: 0 0 35px rgba(0, 0, 0, 0.75);
 }
 
-.card-base-img {
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 445px;
-  height: 360px;
-  object-fit: fill;
-  pointer-events: none;
+.tribute-form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 22px;
+  animation: fadeIn 0.4s ease;
 }
 
-.card-interactive-overlay {
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 445px;
-  height: 360px;
-  z-index: 15;
+.input-wrapper {
+  position: relative;
+  width: 380px;
+  height: 52px;
 }
 
-/* Inputs overlaying the base image */
-.feedback-input {
-  position: absolute;
-  left: 114px;
-  width: 275px;
-  height: 44px;
-  background: transparent;
-  color: #dfba6d;
-  border: none;
-  outline: none;
+.tribute-input {
+  width: 100%;
+  height: 100%;
+  background: rgba(18, 9, 11, 0.72);
+  border: 1px solid rgba(223, 186, 109, 0.42);
+  border-radius: 6px;
+  padding: 0 18px;
+  color: #ffe094;
   font-family: 'Michroma', sans-serif;
-  font-size: 16px;
-  font-weight: 400;
+  font-size: 15px;
   letter-spacing: 0.08em;
-  caret-color: #dfba6d;
-  padding: 0 4px;
-  z-index: 20;
+  outline: none;
+  box-sizing: border-box;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  transition: border-color 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
 }
 
-.feedback-input::placeholder {
-  color: rgba(223, 186, 109, 0.72);
+.tribute-input::placeholder {
+  color: rgba(223, 186, 109, 0.6);
   font-family: 'Michroma', sans-serif;
-  font-size: 16px;
-  font-weight: 400;
+  font-size: 14px;
   letter-spacing: 0.08em;
   transition: opacity 0.2s ease;
 }
 
-.feedback-input:focus::placeholder {
+.tribute-input:focus {
+  border-color: #dfba6d;
+  background: rgba(26, 12, 15, 0.85);
+  box-shadow: 0 0 20px rgba(223, 186, 109, 0.4), inset 0 0 12px rgba(223, 186, 109, 0.12);
+}
+
+.tribute-input:focus::placeholder {
   opacity: 0.35;
 }
 
-.name-input-field {
-  top: 68px;
-}
-
-.phone-input-field {
-  top: 151px;
-}
-
-/* Button overlaying the base image */
-.feedback-submit-btn {
-  position: absolute;
-  left: 92px;
-  top: 243px;
-  width: 282px;
-  height: 54px;
-  background: transparent;
-  border: none;
+/* Futuristic Submit Button */
+.tribute-submit-btn {
+  position: relative;
+  width: 320px;
+  height: 50px;
+  margin-top: 10px;
+  background: linear-gradient(180deg, rgba(223, 186, 109, 0.16) 0%, rgba(140, 95, 20, 0.32) 100%);
+  border: 1.5px solid #dfba6d;
+  border-radius: 25px;
   cursor: pointer;
-  border-radius: 27px;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #dfba6d;
+  color: #fff3c4;
   font-family: 'Michroma', sans-serif;
   font-size: 13.5px;
-  font-weight: 400;
-  letter-spacing: 0.16em;
+  letter-spacing: 0.18em;
   text-shadow: 0 0 8px rgba(223, 186, 109, 0.5);
-  transition: box-shadow 0.2s ease, transform 0.15s ease, filter 0.2s ease;
-  z-index: 20;
+  box-shadow: 0 0 15px rgba(223, 186, 109, 0.3), inset 0 0 10px rgba(223, 186, 109, 0.15);
+  transition: transform 0.2s ease, box-shadow 0.25s ease, background 0.25s ease;
   user-select: none;
+  backdrop-filter: blur(6px);
 }
 
-.feedback-submit-btn:hover {
-  box-shadow: 0 0 16px rgba(223, 186, 109, 0.75);
-  filter: brightness(1.2);
+.tribute-submit-btn:hover {
+  transform: scale(1.04);
+  background: linear-gradient(180deg, rgba(223, 186, 109, 0.3) 0%, rgba(180, 125, 30, 0.5) 100%);
+  box-shadow: 0 0 25px rgba(223, 186, 109, 0.75), 0 0 40px rgba(255, 152, 0, 0.35);
+  color: #ffffff;
 }
 
-.feedback-submit-btn:active {
+.tribute-submit-btn:active {
   transform: scale(0.98);
 }
 
-/* Submission Toast */
-.card-toast {
+/* =========================================================
+   4. DRAMATIC "TRIBUTE ENLISTED" BURN STAMP ANIMATION
+   ========================================================= */
+.burn-stamp-overlay {
+  position: relative;
+  width: 420px;
+  min-height: 310px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.burn-stamp-overlay.active .burn-stamp-card {
+  animation: stampSlam 0.55s cubic-bezier(0.18, 0.89, 0.32, 1.28) forwards;
+}
+
+.burn-stamp-overlay.active .burn-shockwave {
+  animation: burnShockwave 0.8s ease-out forwards;
+}
+
+.burn-stamp-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 24px 20px;
+  background: radial-gradient(circle, rgba(30, 12, 15, 0.88) 0%, rgba(12, 6, 8, 0.95) 100%);
+  border: 1.5px solid rgba(255, 152, 0, 0.85);
+  border-radius: 12px;
+  box-shadow: 0 0 35px rgba(255, 87, 34, 0.6), inset 0 0 25px rgba(255, 152, 0, 0.25);
+  backdrop-filter: blur(10px);
+}
+
+.burn-emblem-wrap {
+  position: relative;
+  width: 90px;
+  height: 90px;
+  margin-bottom: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.burn-mockingjay-img {
+  width: 78px;
+  height: 78px;
+  border-radius: 50%;
+  filter: drop-shadow(0 0 15px #ff9800) brightness(1.3);
+  animation: emblemPulse 1.8s ease-in-out infinite alternate;
+}
+
+.burn-fire-halo {
   position: absolute;
-  bottom: -30px;
-  left: 50%;
-  transform: translateX(-50%);
-  background: rgba(20, 10, 10, 0.96);
-  border: 1px solid #dfba6d;
-  padding: 8px 18px;
-  border-radius: 4px;
-  color: #dfba6d;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  border: 2px solid #ff9800;
+  box-shadow: 0 0 20px #ff5722, inset 0 0 15px #ff9800;
+  animation: haloPulse 1.2s ease-in-out infinite alternate;
+}
+
+.burn-stamp-title {
   font-family: 'Michroma', sans-serif;
-  font-size: 12px;
-  letter-spacing: 0.12em;
-  box-shadow: 0 0 15px rgba(223, 186, 109, 0.6);
-  z-index: 30;
-  animation: toastFade 0.25s ease;
-  white-space: nowrap;
+  font-size: 24px;
+  letter-spacing: 0.16em;
+  font-weight: 700;
+  background: linear-gradient(180deg, #fff8db 0%, #ffb300 45%, #e65100 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 0 12px rgba(255, 152, 0, 0.85));
+  margin-bottom: 8px;
+  animation: burnGlow 1.5s ease-in-out infinite alternate;
 }
 
-@keyframes toastFade {
-  from { opacity: 0; transform: translate(-50%, 6px); }
-  to { opacity: 1; transform: translate(-50%, 0); }
+.burn-stamp-subtitle {
+  font-family: 'Michroma', sans-serif;
+  font-size: 11.5px;
+  letter-spacing: 0.16em;
+  color: #dfba6d;
+  text-shadow: 0 0 8px rgba(223, 186, 109, 0.6);
+  margin-bottom: 6px;
 }
 
-/* 4. INFO Column */
+.burn-stamp-tag {
+  font-family: 'Michroma', sans-serif;
+  font-size: 9.5px;
+  letter-spacing: 0.22em;
+  color: rgba(255, 152, 0, 0.8);
+}
+
+.burn-shockwave {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.2);
+  width: 380px;
+  height: 380px;
+  border-radius: 50%;
+  border: 3px solid #ff9800;
+  box-shadow: 0 0 40px #ff5722, inset 0 0 30px #ff9800;
+  pointer-events: none;
+  opacity: 0;
+}
+
+@keyframes stampSlam {
+  0% {
+    transform: scale(2.2);
+    opacity: 0;
+    filter: blur(10px) brightness(2.5);
+  }
+  60% {
+    transform: scale(0.96);
+    opacity: 1;
+    filter: blur(0) brightness(1.5);
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+    filter: brightness(1);
+  }
+}
+
+@keyframes burnShockwave {
+  0% {
+    transform: translate(-50%, -50%) scale(0.2);
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.9;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1.6);
+    opacity: 0;
+  }
+}
+
+@keyframes burnGlow {
+  from { filter: drop-shadow(0 0 8px rgba(255, 152, 0, 0.6)); }
+  to { filter: drop-shadow(0 0 18px rgba(255, 87, 34, 1)); }
+}
+
+@keyframes haloPulse {
+  from { transform: scale(0.95); opacity: 0.7; }
+  to { transform: scale(1.05); opacity: 1; }
+}
+
+@keyframes emblemPulse {
+  from { transform: scale(0.98); }
+  to { transform: scale(1.03); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* =========================================================
+   5. LEFT COLUMN (INFO, CONTACT US, SOCIAL MEDIA)
+   All Centered Along Unified Centerline X = 340px
+   ========================================================= */
+/* A. INFO Title */
 .info-title {
-  left: 282px;
-  top: 214px;
+  left: 255px;
+  top: 210px;
   width: 170px;
   height: 40px;
   display: flex;
@@ -264,10 +449,11 @@
   font-weight: 400;
 }
 
+/* B. Nav Links */
 .nav-links-container {
-  left: 266px;
-  top: 290px;
-  width: 203px;
+  left: 238px;
+  top: 285px;
+  width: 204px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -310,12 +496,12 @@
   filter: drop-shadow(0 0 10px rgba(223, 186, 109, 0.9)) brightness(1.25);
 }
 
-/* 5. CONTACT US Column */
+/* C. CONTACT US Title */
 .contact-us-title {
   left: 135px;
-  top: 534px;
+  top: 530px;
   width: 410px;
-  height: 34px;
+  height: 36px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -329,11 +515,12 @@
   font-weight: 400;
 }
 
+/* D. Contact Person (Khush Thakkar) */
 .contact-person-block {
-  left: 80px;
-  top: 628px;
-  width: 529px;
-  height: 111px;
+  left: 75px;
+  top: 618px;
+  width: 530px;
+  height: 115px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -378,10 +565,10 @@
   transform: scale(1.04);
 }
 
-/* 6. SOCIAL MEDIA Column */
+/* E. SOCIAL MEDIA Title */
 .social-media-title {
-  left: 115px;
-  top: 833px;
+  left: 140px;
+  top: 825px;
   width: 400px;
   height: 50px;
   display: flex;
@@ -397,9 +584,10 @@
   font-weight: 400;
 }
 
+/* F. Social Icons */
 .social-icons-container {
-  left: 125px;
-  top: 900px;
+  left: 175px;
+  top: 895px;
   width: 330px;
   height: 90px;
   display: flex;
@@ -424,12 +612,16 @@
   filter: drop-shadow(0 0 12px rgba(255, 255, 255, 0.9)) brightness(1.3);
 }
 
-/* 7. ADDRESS Column */
+/* =========================================================
+   6. RIGHT COLUMN (ADDRESS & MAP)
+   All Centered Along Unified Centerline X = 1535px
+   ========================================================= */
+/* A. ADDRESS Title */
 .address-title {
-  left: 1333px;
+  left: 1360px;
   top: 210px;
-  width: 349px;
-  height: 37px;
+  width: 350px;
+  height: 38px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -443,10 +635,11 @@
   font-weight: 400;
 }
 
+/* B. Address Content Block */
 .address-block {
-  left: 1326px;
+  left: 1325px;
   top: 278px;
-  width: 411px;
+  width: 420px;
   height: 157px;
   display: flex;
   align-items: center;
@@ -489,10 +682,10 @@
   white-space: nowrap;
 }
 
-/* 8. INTERACTIVE MAP (Exact Xtract 4.0 Embed) */
+/* C. Interactive Google Maps Embed (Xtract 4.0) */
 .map-container {
   left: 1377px;
-  top: 517px;
+  top: 515px;
   width: 316px;
   height: 319px;
   z-index: 5;
@@ -529,7 +722,7 @@
 }
 
 /* =========================================================
-   MOBILE RESPONSIVE VIEW (PHONES & PORTRAIT TABLETS)
+   7. MOBILE RESPONSIVE VIEW (PHONES & PORTRAIT TABLETS)
    ========================================================= */
 @media screen and (max-width: 900px), screen and (max-device-width: 900px) and (orientation: portrait) {
   .canvas-wrapper {
@@ -591,12 +784,12 @@
     letter-spacing: 0.1em !important;
   }
 
-  /* 2. Tribute Subtitle & Gold Divider */
+  /* 2. Tribute Subtitle */
   .tribute-block {
     width: 100% !important;
     max-width: 300px !important;
     margin-top: 0 !important;
-    margin-bottom: 18px !important;
+    margin-bottom: 22px !important;
   }
 
   .tribute-text-heading {
@@ -610,63 +803,71 @@
     max-width: 260px !important;
   }
 
-  /* 3. Feedback Card Box */
-  .feedback-card {
+  /* 3. Center Form & Burn Stamp */
+  .tribute-form-container {
     width: 100% !important;
     max-width: 300px !important;
-    height: 243px !important;
-    margin: 0 0 38px !important;
-    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.85) !important;
+    min-height: auto !important;
+    margin-bottom: 38px !important;
   }
 
-  .card-base-img,
-  .card-interactive-overlay {
+  .tribute-form {
+    gap: 16px !important;
+  }
+
+  .input-wrapper {
     width: 100% !important;
-    height: 100% !important;
+    height: 46px !important;
   }
 
-  .feedback-input {
-    left: 25.6% !important;
-    width: 61.8% !important;
-    height: 12.2% !important;
+  .tribute-input {
+    font-size: 12.5px !important;
+    padding: 0 14px !important;
+  }
+
+  .tribute-input::placeholder {
     font-size: 11.5px !important;
-    font-weight: 400 !important;
-    color: #dfba6d !important;
-    font-family: 'Michroma', sans-serif !important;
-    padding: 0 4px !important;
-    letter-spacing: 0.05em !important;
   }
 
-  .feedback-input::placeholder {
-    font-size: 11.5px !important;
-    font-weight: 400 !important;
-    color: rgba(223, 186, 109, 0.72) !important;
-    font-family: 'Michroma', sans-serif !important;
-    letter-spacing: 0.05em !important;
+  .tribute-submit-btn {
+    width: 100% !important;
+    height: 46px !important;
+    font-size: 11px !important;
+    margin-top: 4px !important;
   }
 
-  .name-input-field {
-    top: 18.8% !important;
+  /* Mobile Burn Stamp */
+  .burn-stamp-overlay {
+    width: 100% !important;
+    min-height: 240px !important;
   }
 
-  .phone-input-field {
-    top: 42.2% !important;
+  .burn-stamp-card {
+    padding: 18px 14px !important;
   }
 
-  .feedback-submit-btn {
-    left: 20.7% !important;
-    top: 67.5% !important;
-    width: 63.4% !important;
-    height: 15% !important;
-    font-size: 10px !important;
-    font-weight: 400 !important;
-    letter-spacing: 0.1em !important;
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    color: #dfba6d !important;
-    font-family: 'Michroma', sans-serif !important;
-    text-shadow: 0 0 6px rgba(223, 186, 109, 0.5) !important;
+  .burn-emblem-wrap {
+    width: 65px !important;
+    height: 65px !important;
+    margin-bottom: 10px !important;
+  }
+
+  .burn-mockingjay-img {
+    width: 55px !important;
+    height: 55px !important;
+  }
+
+  .burn-stamp-title {
+    font-size: 17px !important;
+    margin-bottom: 6px !important;
+  }
+
+  .burn-stamp-subtitle {
+    font-size: 9.5px !important;
+  }
+
+  .burn-stamp-tag {
+    font-size: 8px !important;
   }
 
   /* 4. INFO & Nav Links */

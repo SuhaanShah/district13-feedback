@@ -8,13 +8,24 @@ import iconInstagram from './assets/icon_instagram.png';
 import iconLinkedin from './assets/icon_linkedin.png';
 import iconEmail from './assets/icon_email.png';
 import goldDividerLine from './assets/gold_divider_line.png';
-import cleanCardTransparent from './assets/clean_card_transparent.png';
 import mapGoldFrame from './assets/map_gold_frame.png';
+import mockingjayEmblem from './assets/mockingjay_top_emblem.png';
+
+// Generate 32 randomized ember particles for pure CSS animation
+const EMBERS = Array.from({ length: 32 }, (_, i) => ({
+  id: i,
+  left: `${((i * 3.1 + (i % 7) * 2.3) % 98) + 1}%`,
+  size: `${(i % 4) * 1.5 + 2.5}px`,
+  duration: `${4.5 + (i % 6) * 1.1}s`,
+  delay: `${(i % 11) * 0.55}s`,
+  drift: `${((i % 7) - 3) * 18}px`,
+}));
 
 function App() {
   const [name, setName] = useState('');
   const [phone, setPhone] = useState('');
   const [submitted, setSubmitted] = useState(false);
+  const [stampActive, setStampActive] = useState(false);
 
   useEffect(() => {
     const updateScale = () => {
@@ -36,11 +47,17 @@ function App() {
     e.preventDefault();
     if (!name.trim() && !phone.trim()) return;
     setSubmitted(true);
+    setStampActive(true);
+
+    // After 5.5 seconds, reset state gracefully
     setTimeout(() => {
-      setSubmitted(false);
-      setName('');
-      setPhone('');
-    }, 3000);
+      setStampActive(false);
+      setTimeout(() => {
+        setSubmitted(false);
+        setName('');
+        setPhone('');
+      }, 500);
+    }, 5500);
   };
 
   return (
@@ -51,6 +68,24 @@ function App() {
         '--mobile-bg': `url(${bgMobileImg})`
       }}
     >
+      {/* Floating Fiery Ember Particles */}
+      <div className="ember-overlay" aria-hidden="true">
+        {EMBERS.map((e) => (
+          <span
+            key={e.id}
+            className="ember"
+            style={{
+              left: e.left,
+              width: e.size,
+              height: e.size,
+              animationDuration: e.duration,
+              animationDelay: e.delay,
+              '--ember-drift': e.drift,
+            }}
+          />
+        ))}
+      </div>
+
       <div className="canvas-stage">
 
         {/* FEEDBACK Header */}
@@ -68,55 +103,65 @@ function App() {
           />
         </div>
 
-        {/* Feedback Card Box with Exact Figma Graphics & HTML Typography */}
-        <div className="stage-elem feedback-card">
-          <img
-            src={cleanCardTransparent}
-            className="card-base-img"
-            alt="Feedback Box"
-          />
+        {/* Center Tribute Form Container (Center box removed, sleek floating futuristic inputs) */}
+        <div className="stage-elem tribute-form-container">
+          {!submitted ? (
+            <form className="tribute-form" onSubmit={handleSubmit}>
+              <div className="input-wrapper">
+                <input
+                  type="text"
+                  name="name"
+                  placeholder="NAME"
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
+                  className="tribute-input"
+                  autoComplete="off"
+                  spellCheck="false"
+                  required
+                />
+                <span className="input-border-glow" />
+              </div>
 
-          <form className="card-interactive-overlay" onSubmit={handleSubmit}>
-            {/* Name Input Overlay */}
-            <input
-              type="text"
-              name="name"
-              placeholder="Name"
-              value={name}
-              onChange={(e) => setName(e.target.value)}
-              className="feedback-input name-input-field"
-              autoComplete="off"
-              spellCheck="false"
-              required
-            />
+              <div className="input-wrapper">
+                <input
+                  type="tel"
+                  name="phone"
+                  placeholder="PHONE NUMBER"
+                  value={phone}
+                  onChange={(e) => setPhone(e.target.value)}
+                  className="tribute-input"
+                  autoComplete="off"
+                  spellCheck="false"
+                  required
+                />
+                <span className="input-border-glow" />
+              </div>
 
-            {/* Phone Number Input Overlay */}
-            <input
-              type="tel"
-              name="phone"
-              placeholder="Phone Number"
-              value={phone}
-              onChange={(e) => setPhone(e.target.value)}
-              className="feedback-input phone-input-field"
-              autoComplete="off"
-              spellCheck="false"
-              required
-            />
-
-            {/* Send Request Button Overlay */}
-            <button
-              type="submit"
-              className="feedback-submit-btn"
-              title="Send Request"
-            >
-              <span>— SEND REQUEST —</span>
-            </button>
-          </form>
-
-          {/* Submission Toast */}
-          {submitted && (
-            <div className="card-toast">
-              <span>REQUEST TRANSMITTED</span>
+              <button
+                type="submit"
+                className="tribute-submit-btn"
+                title="Send Request"
+              >
+                <span className="btn-inner-glow" />
+                <span className="btn-label">— SEND REQUEST —</span>
+              </button>
+            </form>
+          ) : (
+            <div className={`burn-stamp-overlay ${stampActive ? 'active' : 'fading'}`}>
+              <div className="burn-shockwave" />
+              <div className="burn-stamp-card">
+                <div className="burn-emblem-wrap">
+                  <img
+                    src={mockingjayEmblem}
+                    alt="Mockingjay Seal"
+                    className="burn-mockingjay-img"
+                  />
+                  <div className="burn-fire-halo" />
+                </div>
+                <div className="burn-stamp-title">TRIBUTE ENLISTED</div>
+                <div className="burn-stamp-subtitle">DISTRICT 13 TRANSMISSION CONFIRMED</div>
+                <div className="burn-stamp-tag">MARK RECORDED // SECTOR 4</div>
+              </div>
             </div>
           )}
         </div>
